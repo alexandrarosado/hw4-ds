@@ -1,0 +1,154 @@
+/* Define a feminine and professional color palette */
+:root {
+    --color-primary: #6F4E7C; /* Professional Plum */
+    --color-secondary: #DDA0DD; /* Soft Lavender/Rose */
+    --color-light: #FAF9F6; /* Creamy Off-White Background */
+    --color-text: #333333;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Base Styles */
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-light);
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Navigation Bar */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-primary);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    z-index: 1000;
+}
+
+nav h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-secondary);
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: var(--color-light);
+    text-decoration: none;
+    padding: 0.5rem 1.25rem;
+    border: 2px solid var(--color-secondary);
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 600;
+}
+
+nav a:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+/* Header / Banner */
+.header-banner {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    text-align: center;
+    padding: 4rem 1rem 5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.header-banner h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    color: var(--color-secondary);
+}
+
+/* Main Content Grid */
+.content-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr); 
+}
+
+/* Individual Card Styles */
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 4rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    nav h2 {
+        margin-bottom: 0.75rem;
+    }
+    .header-banner h1 {
+        font-size: 2.5rem;
+    }
+}
